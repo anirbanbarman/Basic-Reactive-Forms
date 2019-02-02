@@ -1,0 +1,48 @@
+<div class="form"  [formGroup]="detailsForm">
+  <h2>Details Form</h2>
+   <label for="Name">Name</label>
+  <input id="Name" type="text" formControlName="Name"><br/>
+  <label for="School">School</label>
+  <input id="School" type="text" formControlName="School">
+  <h3>Address</h3>
+  <div formGroupName="Address">
+      <label for="Street">Street</label>
+      <input id="Street" type="text" formControlName="Street"><br/>
+      <label for="Landmark">Landmark</label>
+      <input id="Landmark" type="text" formControlName="Landmark">
+  </div><br/>
+  <label for="sport">Sport</label>
+  <select  id="sport" formControlName="Sports">
+      <option *ngFor="let sport of sports" [value]="sport">{{sport}}</option>
+    </select><br/>
+  <button (click)="showDetails()">Show Details</button>
+
+<span>{{details}}</span>
+</div>
+<div class="form_fb"  [formGroup]="detailsform_fb">
+    <h2>Details Form(FormBuilder)</h2>
+     <label for="Name">Name</label>
+    <input id="Name" type="text" formControlName="Name"><br/>
+    <label for="School">School</label>
+    <input id="School" type="text" formControlName="School">
+    <h3>Address</h3>
+    <div formGroupName="Address">
+        <label for="Street">Street</label>
+        <input id="Street" type="text" formControlName="Street"><br/>
+        <label for="Landmark">Landmark</label>
+        <input id="Landmark" type="text" formControlName="Landmark">
+    </div><br/>
+    <label for="sport">Sport</label>
+ 
+      <label >
+        <input id="sport" type="radio" value="cricket"
+               formControlName="sports">Cricket
+      </label>
+      <label >
+          <input id="sport" type="radio" value="football"
+                 formControlName="sports">football
+        </label><br/>
+    <button (click)="showDetails_fb()">Show Details</button>
+  
+  <span>{{details_fb}}</span>
+  </div>
